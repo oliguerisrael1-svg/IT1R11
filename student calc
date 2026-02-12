@@ -1,0 +1,27 @@
+snumber = int(input("Enter Student ID Number: "))
+sname = input("Enter Student Name: ")
+scourse = input("Enter Student Course: ")
+ssub = input("Enter Student Subject: ")
+prelim = int(input("Enter Prelim Exam Score: "))
+midterm = int(input("Enter Midterm Exam Score: "))
+finals = int(input("Enter Finals Exam Score: "))
+
+average = (prelim* .20) + (midterm* .30) + (finals* .50)
+
+print("---------------------------------------------------------------------------------")
+print("Student ID Number ", snumber)
+print("Student Name: ", sname)
+print("Student Course: ", scourse)
+print("Student Subject: ", ssub)
+print("Student Prelim Exam Score: ", prelim)
+print("Student Midterm Exam Score: ", midterm)
+print("Student Finals Exam Score: ", finals)
+print("Student Weighted Average: ", average)
+
+
+if average >= 75:
+    print("Remarks: Passed")
+else:
+    print("Remarks: Failed")
+    
+
