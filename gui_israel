@@ -1,0 +1,49 @@
+import tkinter as tk
+
+window = tk.Tk()
+window.title("Simple Payroll System")
+window.geometry("300x300")
+
+tk.Label(window, text="Employee Number").pack()
+empno_entry = tk.Entry(window)
+empno_entry.pack()
+
+tk.Label(window, text="Employee Name").pack()
+name_entry = tk.Entry(window)
+name_entry.pack()
+
+tk.Label(window, text="Rate per Day").pack()
+rate_entry = tk.Entry(window)
+rate_entry.pack()
+
+tk.Label(window, text="Days Worked").pack()
+days_entry = tk.Entry(window)
+days_entry.pack()
+
+def compute():
+    rate = float(rate_entry.get())
+    days = float(days_entry.get())
+
+    gross = rate * days
+    deductions = 150 + 200 + 2500
+    net = gross - deductions
+
+    gross_label.config(text=str(gross))
+    deductions_label.config(text=str(deductions))
+    net_label.config(text=str(net))
+
+tk.Button(window, text="Compute", command=compute).pack()
+
+tk.Label(window, text="Gross Pay").pack()
+gross_label = tk.Label(window, text="")
+gross_label.pack()
+
+tk.Label(window, text="Total Deductions").pack()
+deductions_label = tk.Label(window, text="")
+deductions_label.pack()
+
+tk.Label(window, text="Net Pay").pack()
+net_label = tk.Label(window, text="")
+net_label.pack()
+
+window.mainloop()
